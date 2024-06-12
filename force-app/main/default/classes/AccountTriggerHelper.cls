@@ -5,11 +5,9 @@ public with sharing class AccountTriggerHelper {
 
         // If there are open opportunities related to these accounts, throw an error
         for (Opportunity opp : oppList) {
-            if (opp.StageName != 'Closed Won' && opp.StageName != 'Closed Lost') {
-                for (Account acc : accMap.values()) {
-                    acc.addError('This account cannot be deleted because it has related opportunities that are not closed.');
+            if (opp.StageName != 'Closed Won' || opp.StageName != 'Closed Lost') {
+                opp.addError('This account cannot be deleted because it has related opportunities that are not closed.');
                 }
-                break; // Stop checking further once we find an open opportunity
             }
         }
     }
