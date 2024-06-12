@@ -7,7 +7,6 @@ public with sharing class AccountTriggerHelper {
         for (Opportunity opp : oppList) {
             if (opp.StageName != 'Closed Won' || opp.StageName != 'Closed Lost') {
                 opp.addError('This account cannot be deleted because it has related opportunities that are not closed.');
-                }
             }
         }
     }
