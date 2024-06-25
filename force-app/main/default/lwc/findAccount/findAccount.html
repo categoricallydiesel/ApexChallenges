@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Search Accounts">
+        <lightning-input 
+            type="text"
+            label="Find Account"
+            onchange={handleInputChange}
+        ></lightning-input>
+        <template lwc:if={accounts}>
+            <template lwc:if={hasAccounts}>
+                <ul>
+                    <template for:each={accounts} for:item="account">
+                        <li key={account.Id} class="slds-p-vertical_small">
+                            <p><strong>Name:</strong> {account.Name}</p>
+                            <p><strong>Industry:</strong> {account.Industry}</p>
+                            <p><strong>Phone:</strong> {account.Phone}</p>
+                            <p><strong>Billing City:</strong> {account.BillingCity}</p>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template lwc:if={noAccounts}>
+                <p>No accounts found.</p>
+            </template>
+        </template>
+        <template lwc:if={isSearchEmpty}>
+            <p>Enter an account name to search.</p>
+        </template>
+    </lightning-card>
+</template>
