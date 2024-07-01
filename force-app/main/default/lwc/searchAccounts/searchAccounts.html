@@ -1,0 +1,26 @@
+<template>
+    <lightning-input
+        type="search"
+        label="Search Accounts"
+        onchange={handleSearch}
+    ></lightning-input>
+    <template lwc:if={accounts}>
+        <ul class="slds-listbox slds-listbox_vertical slds-m-top_small">
+            <template for:each={accounts} for:item="account">
+                <li key={account.Id} class="slds-listbox__item">
+                    <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-is-selectable" 
+                         role="option" onclick={selectAccount} data-id={account.Id}>
+                        <span class="slds-media__body">
+                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{account.Name}</span>
+                        </span>
+                    </div>
+                </li>
+            </template>
+        </ul>
+    </template>
+    <template lwc:if={selectedAccount}>
+        <div class="slds-m-top_small">
+            {selectedAccount.Name}
+        </div>
+    </template>
+</template>

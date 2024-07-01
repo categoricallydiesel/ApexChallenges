@@ -12,7 +12,7 @@
   "name": "ApexChallenges",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "59.0",
+  "sourceApiVersion": "60.0",
   "packageAliases": {
     "EthansUnlockedChallenge": "0Hoaj00000008s1CAA"
   }

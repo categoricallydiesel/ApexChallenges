@@ -1,0 +1,12 @@
+<!-- createContact.html -->
+<template>
+    <lightning-card title="Create Contact">
+        <div class="slds-m-around_medium">
+            <c-find-account onaccountselected={handleAccountSelected}></c-find-account>
+            <lightning-input label="First Name" onchange={handleFirstNameChange}></lightning-input>
+            <lightning-input label="Last Name" onchange={handleLastNameChange}></lightning-input>
+            <!-- Add other contact fields as needed -->
+            <lightning-button label="Save" onclick={handleSave} class="custom-button-margin"></lightning-button>
+        </div>
+    </lightning-card>
+</template>
